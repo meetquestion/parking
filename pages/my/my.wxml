@@ -1,0 +1,42 @@
+<!--pages/my/my.wxml-->
+ <view style="width: {{ui.menuWidth}}px;left:{{-ui.menuWidth/3 + ui.offsetLeft/3}}px" >
+    <!-- <view class="user-face-wrapper">
+    <!--<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
+     <!--<image class="user-face" src="{{userInfo.avatarUrl}}"></image> 
+      <view class='user-info' style="text-align:center">
+        <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+    </view>
+    </view>-->
+    <view class="page__hd i-header">
+        <view class="g-bd">
+            <view></view>
+            <view class="g-bda">
+                <view bindtap="" class="g-bda-userinfo">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+    <view style='background-color: #fff;' class='container'>
+     <view class="itemself" bindtap="click_myJoin" data-index="2">
+        <image src="/static/images/icon/parking.png" class="itemself_ico"></image>
+        <span>停车订单</span>
+      </view>
+      <view class="itemself" bindtap="click_myLaunch" data-index="1">
+        <image src="/static/images/icon/chuzu.png" class="itemself_ico"></image>
+        <span>出租订单</span>
+      </view>
+      <view class="itemself" bindtap="click_myWallet" data-index="3">
+        <image src="/static/images/icon/pocket.png" class="itemself_ico"></image>
+        <span>我的钱包</span>
+      </view>
+      <view class="itemself" bindtap="click_project" data-index="4">
+        <image src="/static/images/icon/project.png" class="itemself_ico"></image>
+        <span>项目简介</span>
+      </view>
+    </view>
+    <view class="h10"></view>
+    <view class="h10"></view>
+</view>

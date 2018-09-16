@@ -1,0 +1,31 @@
+<template name="tempOrderList">
+  <view class="common-list">
+    <block wx:key="id" wx:for="{{postsList}}">
+      <view class="list-item has-img" index="{{index}}" id="{{item.id}}"  data-ownid='{{item.ownerid}}' data-spaceid="{{item.spaceid}}" bindtap="click_activity">
+        <view class="content-title1">
+          <text>订单状态：{{item.status}}</text>
+          <text>开始使用时间：{{item.startdate}} {{item.starttime}}</text>
+          <text>车位名：{{item.spacename}}</text>
+           <text>总计金额：{{item.usemoney}}元</text>
+        </view>
+        <image src="{{item.spacePic}}" mode="aspectFill" class="cover"></image>
+      </view>
+    </block>
+  </view>  
+</template>
+<template name="tempOrderList1">
+  <view class="common-list">
+    <block wx:key="id" wx:for="{{postsList}}">
+      <view class="list-item has-img" index="{{index}}" id="{{item.id}}"  data-ownid='{{item.ownerid}}' data-spaceid="{{item.spaceid}}" bindtap="click_activity">
+        <view class="content-title1">
+          <text>订单状态：{{item.status}}</text>
+          <text>停车者：{{item.username}}</text>
+          <text>开始时间：{{item.startdate}} {{item.starttime}}</text>
+          <text>车位名：{{item.spacename}}</text>
+           <text>总计金额：{{item.usemoney}}元</text>
+        </view>
+        <image src="{{item.spacePic}}" mode="aspectFill" class="cover"></image>
+      </view>
+    </block>
+  </view>  
+</template>

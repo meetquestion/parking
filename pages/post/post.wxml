@@ -1,0 +1,159 @@
+<!--pages/post/post.wxml-->
+
+<!-- 发布车位 -->
+<view class="add-page">
+  <form bindsubmit="submitForm">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{TopTips}}</view>
+    <view class="mod-a">
+      <!-- 车位名称 -->
+      <view class="mod t-name">
+        <text class="key">车位名称</text>
+        <input name="spacename" class="input" maxlength="100" placeholder="请输入车位名称" value="{{spacename}}" />
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+    </view>
+
+    <view class="mod-a mt20">
+      <!-- 车位类别 -->
+      <view class="mod t-sign-time">
+        <text class="key">车位类别</text>
+        <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+          <view class="value" name="types">{{types[typeIndex]}}
+            <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class="mod-a"></view>
+
+      <!-- 车位数 -->
+      <view class="mod t-name">
+        <text class="key">车位数</text>
+        <input name="spacenumber" class="input" maxlength="100" placeholder="请输入车位数" value="{{spacenumber}}"/>
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+      <view class="mod-a"></view>
+
+      <!-- 车位位置 -->
+      <view class="mod t-address" bindtap="chooseLocation">
+        <text class="key">车位位置</text>
+        <text name="address" class="value" bindtap="addressChange" value="{{address}}">{{address}}</text>
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+
+      <!-- 有效开始使用时间 -->
+      <view class="mod t-sign-time">
+        <text class="key">可使用开始时间</text>
+        <picker mode="date" value="{{startdate}}" start="{{startdate}}" end="2020-09-01" bindchange="bindDateChange1">
+          <view class="value" name="startdate">{{startdate}}
+            <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+          </view>
+        </picker>
+        <picker mode="time" value="{{starttime}}" start="00:00" end="23:59" bindchange="bindTimeChange1">
+          <view class="value" name="starttime">{{starttime}}
+            <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+          </view>
+        </picker>
+      </view>
+
+       <!-- 有效结束使用时间 -->
+      <view class="mod t-sign-time">
+        <text class="key">可使用结束时间</text>
+        <picker mode="date" value="{{enddate}}" start="{{enddate}}" end="2020-09-01" bindchange="bindDateChange2">
+          <view class="value" name="enddate">{{enddate}}
+            <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+          </view>
+        </picker>
+         <picker mode="time" value="{{endtime}}" start="00:00" end="23:59" bindchange="bindTimeChange2">
+          <view class="value" name="endtime">{{endtime}}
+            <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+          </view>
+        </picker>
+      </view>
+      <!-- 收费标准 -->
+      <view class="mod t-name">
+        <text class="key">收费标准</text>
+        <input name="money" class="input" maxlength="100" placeholder="请输入收费标准（元）/时" value="{{money}}"/>
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+    </view>
+
+    <!-- 注意事项 -->
+    <view class="mod-a mt20">
+      <view class="mod-big my-nick">
+        <textarea name="content" class="weui-textarea" placeholder="请输入注意事项或其他备注" value="{{content}}" style="height: 7em" bindinput="bindTextAreaChange" maxlength="{{noteMaxLen}}" />
+        <view class="chnumber">{{noteNowLen}}/{{noteMaxLen}}</view>
+      </view>
+    </view>
+    <view class="add_pic" bindtap="uploadPic" wx-if="{{!isSrc}}">
+      <view>添加车位图片</view>
+    </view>
+    <view wx:if="{{isSrc}}" class="image_box">
+      <view class="picPre">
+        <image src="{{src}}" mode="aspectFit"></image>
+        <view bindtap="clearPic"></view>
+      </view>
+    </view>
+    <view class="mod-a mt20"></view>
+    <view class="mod-a mt20" wx:if="{{showInput}}">
+      <!-- 真实姓名 -->
+      <view class="mod t-name">
+        <text class="key">真实姓名</text>
+        <input name="realname" class="input" maxlength="100" placeholder="请输入真实姓名" value="{{realname}}"/>
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+      <view class="mod-a"></view>
+      <view class="mod t-name">
+         <text class="key">手机号</text>
+        <input name="contactValue" class="input" maxlength="100" placeholder="请输入号码" value="{{phonenumber}}"/>
+        <image class="arrow-r" src="../../images/arrow-r-0.png"></image>
+      </view>
+      <view class="add_pic t-code" bindtap="uploadCodePic" wx-if="{{!isCodeSrc}}">
+      <view class='code'>上传您的收钱码</view>
+    </view>
+    <view wx:if="{{isCodeSrc}}" class="image_box">
+      <view class="picPre">
+        <image src="{{codeSrc}}" mode="aspectFit"></image>
+        <view bindtap="clearCodePic"></view>
+      </view>
+    </view>
+    </view>
+
+    <view class="mod-a mt20">
+      <checkbox-group bindchange="bindAgreeChange">
+        <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+            <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="weui-agree__checkbox-icon">
+              <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            阅读并同意
+            <view bindtap="showNotice" class="weui-agree__link">
+              《发布须知》</view>
+          </view>
+        </label>
+      </checkbox-group>
+      <view class="submit-btn">
+        <button class='button' loading="{{isLoading}}" hover-start-time="200" disabled="{{isdisabled}}" formType="submit">发布</button>
+      </view>
+    </view>
+  </form>
+</view>
+
+<view class="notice" id="notice" wx:if="{{notice_status}}" bindtap="tapNotice">
+        <view class="box">
+          <view class="box-hd">
+            <text class="box-title">发布须知</text>
+            <image class="box-close" src="../../images/close.png" bindtap="hideNotice"></image>
+          </view>
+          <view class="box-bd">
+            <view class="notice-q">1、为什么需要填写真实姓名与联系方式等信息？</view>
+            <view class="notice-a">
+              <text>当用户选择您的车位后，方便进行联系。</text>
+            </view>
+            <view class="notice-q">2、发布内容的有哪些限制？</view>
+            <view class="notice-a">
+              <text>发起内容应该在法律允许的范围内，如果发起内容违反了相关的法律法规，一经发现，本软件有权限对该发起进行删除操作。</text>
+            </view>
+          </view>
+        </view>
+      </view>

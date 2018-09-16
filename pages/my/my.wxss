@@ -1,0 +1,236 @@
+/* pages/my/my.wxss */
+
+/*用户*/
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.user {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #f0f0f0;
+}
+
+.h10 {
+  background: #f0f0f0;
+}
+
+.h1 {
+  height: 1px;
+  margin-left: 50px;
+  background: #f0f0f0;
+  position: fixed;
+}
+
+.fr {
+  float: right;
+}
+
+.hint {
+  color: #666;
+  font-size: 11px;
+  margin-right: 5px;
+}
+
+.firstblock, .secondblock, .thirdblock {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* 头部登陆 */
+
+.loginbg {
+  width: 100%;
+  height: 416rpx;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  position: relative;
+}
+
+/* 设置条目 */
+
+.itemself {
+  padding-bottom: 7.5px;
+  padding-top: 7.5px;
+  background-color: #fff;
+  border-bottom: 1rpx solid rgb(230, 230, 230);
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+.itemself_ico {
+  float: left;
+  width: 20px;
+  height: 20px;
+}
+
+.itemself_arrow {
+  float: right;
+  height: 26px;
+  width: 26px;
+  margin: 11px 20px;
+}
+
+.presshover {
+  background-color: #fafafa;
+}
+
+.font_size {
+  font-size: 16px;
+  color: #333;
+}
+
+.bottom-box {
+  width: 100%;
+  text-align: center;
+  border-bottom: 10rpx solid rgb(230, 230, 230);
+}
+
+.list-box {
+  width: 25%;
+  float: left;
+  border-bottom: 10rpx solid rgb(230, 230, 230);
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.icon-text {
+  height: 20px;
+  line-height: 20px;
+  font-size: 18px;
+}
+
+.user {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid #dbdbdb;
+  box-sizing: border-box;
+}
+
+.user .user-box {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.user-face-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 20rpx 0;
+}
+
+.userinfo-nickname {
+  text-align: center;
+  color: #aaa;
+}
+
+.user-face {
+  width: 150rpx;
+  height: 150rpx;
+  position: fixed;
+  border-radius: 50%;
+  -moz-box-shadow: 0px 3px 20px #333;
+  -webkit-box-shadow: 0px 3px 20px #333;
+  box-shadow: 0px 3px 20px #333;
+ 
+}
+
+.user-info {
+  height: 0px;
+  position: fixed;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.user .user-box .user-info text {
+  width: 200rpx;
+  height: 28px;
+  float: left;
+}
+
+.user .user-box .user-info image {
+  height: 20px;
+  width: 20px;
+  float: left;
+}
+
+.user .user-box .one-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  color: white;
+  font-size: 38rpx;
+}
+
+/*---------------------------*/
+
+.dialog {
+  /*透明蒙层*/
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  z-index: 1000;
+  color: #fff;
+}
+
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.i-header{
+  height: 350rpx;
+   background-color:#FF4500;   
+   text-align: center;
+}
+
+.g-bda-userinfo {
+  padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  margin-bottom: 2rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.userinfo-nickname{
+  color: #fff;
+}

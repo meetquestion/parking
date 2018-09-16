@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/post/post",
+    "pages/logs/logs",
+    "pages/my/my",
+    "pages/detail/detail",
+    "pages/my/myjoin/myjoin",
+    "pages/my/mylaunch/mylaunch",
+    "pages/my/project/project"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#FF4500",
+    "navigationBarTitleText": "享泊车",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#FF4500",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "停车场",
+        "iconPath": "images/park2.png",
+        "selectedIconPath": "images/park1.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "发布",
+        "iconPath": "images/add2.png",
+        "selectedIconPath": "images/add1.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "images/my2.png",
+        "selectedIconPath": "images/my1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

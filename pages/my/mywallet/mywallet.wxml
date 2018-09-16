@@ -1,0 +1,49 @@
+<view class="topic-common-list">
+  <view class="topic-list-item">
+    <view>
+     <image src="/static/images/dingbu.jpg" class="cover"></image>
+    </view>
+    <view class="topic-content-title">
+      <text>可用余额</text>
+    </view>
+    <view class="topic-content-title-line"></view>
+    <view class="topic-content-brief">
+          <text>3.00元</text>
+        </view>
+  </view>
+</view>
+<view>
+   <view><text style='color:red;font-size:14px'>没钱了，请老板充值!</text></view>
+  <view class="detail_lineh"></view>
+</view>
+<view class="itemself" bindtap="" data-index="2">
+    <image src="/static/images/icon/pocket.png" class="itemself_ico"></image>
+       <button class="extarea1_case_btn" type="warn">30</button>
+</view>
+<view class="itemself" bindtap="" data-index="1">
+  <image src="/static/images/icon/pocket.png" class="itemself_ico"></image>
+      <span><button class="extarea1_case_btn" style="color:black" type="default">50</button></span>
+</view>
+<view class="itemself" bindtap="" data-index="3">
+  <image src="/static/images/icon/pocket.png" class="itemself_ico"></image>
+        <span><button class="extarea1_case_btn1" style="color:black" type="default">100</button></span>
+</view>
+<view class="itemself" bindtap="click_join" data-index="4" data-join='0'>
+   <image src="/static/images/icon/pocket.png" class="itemself_ico"></image>
+      <span><button style="color:black" type="primary" bindtap="click_join">充值</button></span>
+</view>
+<view class=" {{ showDialog ? 'dialog_show' : '' }}">
+  <view class="dialog_mask" />
+  <view class="dialog_container">
+    <!--  //此区域为充值视图  -->
+    <view class="addForm">
+      <form bindsubmit="joinSubmit" class="white" report-submit="true">
+      <input class="todoName"  type="text" placeholder="支付密码" placeholder-class="place" maxlength="9" />
+        <view class="formButton">
+          <button class="textarea1_case_btn" type="primary" form-type="submit">确定</button>
+          <button class="textarea1_case_btn" type="warn" bindtap="click_join0">取消</button>
+        </view>
+      </form>
+    </view>
+  </view>
+</view>
